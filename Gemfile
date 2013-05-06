@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in middleman-slim.gemspec
 gemspec
+gem "slim", "~> 1.3.6"

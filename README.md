@@ -1,29 +1,23 @@
-# Middleman::Slim
+# middleman-slim
 
-TODO: Write a gem description
+middleman-slim is an extension for the Middleman static site generator that adds support for Slim.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+    gem install middleman 
+    gem install middleman-slim 
+    middleman init PROJECT_NAME --template slim
 
-    gem 'middleman-slim'
+## Run 
+ 
+    cd PROJECT_NAME
+    middleman server
 
-And then execute:
+## Learn more 
 
-    $ bundle
+- [Middleman](http://middlemanapp.com/)
+- [Slim](http://slim-lang.com/)
 
-Or install it yourself as:
+## License 
 
-    $ gem install middleman-slim
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+Released under the MIT License.
