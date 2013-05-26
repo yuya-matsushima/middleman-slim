@@ -27,6 +27,7 @@ module Middleman
         empty_directory File.join(location, 'source', options[:css_dir])
         copy_file 'source/stylesheets/all.css', File.join(location, 'source', options[:css_dir], 'all.css')
         copy_file 'source/stylesheets/normalize.css', File.join(location, 'source', options[:css_dir], 'normalize.css')
+        replace_images_dir
 
         empty_directory File.join(location, 'source', options[:js_dir])
         copy_file 'source/javascripts/all.js', File.join(location, 'source', options[:js_dir], 'all.js')
@@ -34,15 +35,16 @@ module Middleman
         empty_directory File.join(location, 'source', options[:images_dir])
         copy_file 'source/images/background.png', File.join(location, 'source', options[:images_dir], 'background.png')
         copy_file 'source/images/middleman.png', File.join(location, 'source', options[:images_dir], 'middleman.png')
-        replace_css_img_dir
       end
 
       private
-      def replace_css_img_dir
-        f = File.open(File.join(location, 'source', options[:css_dir], 'all.css'), 'r+')
+      def replace_images_dir
+        f = File.open(File.join(location, 'source', options[:css_dir], 'all.css'), 'r')
         buf = f.read
         buf.gsub!(/IMG_DIR/, options[:images_dir])
-        f.rewind
+        f.close
+
+        f = File.open(File.join(location, 'source', options[:css_dir], 'all.css'), 'w')
         f.write(buf)
         f.close
       end
