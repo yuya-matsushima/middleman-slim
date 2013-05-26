@@ -19,13 +19,32 @@ module Middleman
       end
 
       def build_scaffold
-        template "shared/Gemfile.tt", File.join(location, "Gemfile")
+        template 'shared/Gemfile.tt', File.join(location, 'Gemfile')
         template 'shared/config.tt', File.join(location, 'config.rb')
-        directory 'source', File.join(location, 'source')
+        copy_file 'source/index.html.slim', File.join(location, 'source/index.html.slim')
+        copy_file 'source/layouts/layout.slim', File.join(location, 'source/layouts/layout.slim')
 
         empty_directory File.join(location, 'source', options[:css_dir])
+        copy_file 'source/stylesheets/all.css', File.join(location, 'source', options[:css_dir], 'all.css')
+        copy_file 'source/stylesheets/normalize.css', File.join(location, 'source', options[:css_dir], 'normalize.css')
+
         empty_directory File.join(location, 'source', options[:js_dir])
+        copy_file 'source/javascripts/all.js', File.join(location, 'source', options[:js_dir], 'all.js')
+
         empty_directory File.join(location, 'source', options[:images_dir])
+        copy_file 'source/images/background.png', File.join(location, 'source', options[:images_dir], 'background.png')
+        copy_file 'source/images/middleman.png', File.join(location, 'source', options[:images_dir], 'middleman.png')
+        replace_css_img_dir
+      end
+
+      private
+      def replace_css_img_dir
+        f = File.open(File.join(location, 'source', options[:css_dir], 'all.css'), 'r+')
+        buf = f.read
+        buf.gsub!(/IMG_DIR/, options[:images_dir])
+        f.rewind
+        f.write(buf)
+        f.close
       end
     end
   end
