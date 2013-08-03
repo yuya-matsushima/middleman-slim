@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = Middleman::Slim::VERSION
   spec.authors       = ["yterajima"]
   spec.email         = ["terra@e2esound.com"]
-  spec.description   = %q{A Middleman template using Slim.}
+  spec.description   = %q{A Middleman template using Slim. You can use Slim as easy in Middleman Project}
   spec.summary       = %q{A Middleman template using Slim.}
   spec.homepage      = "https://github.com/yterajima/middleman-slim"
   spec.license       = "MIT"
@@ -18,6 +18,6 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "slim", "~> 1.3.0"
-  spec.add_development_dependency "middleman-core", "~> 3.0"
+  spec.add_development_dependency "slim", "~> 2.0.0"
+  spec.add_development_dependency "middleman-core", "~> 3.1.0"
 end
