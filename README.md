@@ -1,5 +1,8 @@
 # middleman-slim
 
+[![Gem Version](https://badge.fury.io/rb/middleman-slim.png)][gem]
+[![Build Status](https://travis-ci.org/yterajima/middleman-slim.png)][travis]
+
 middleman-slim is an extension for the Middleman static site generator that adds support for Slim.
 
 ## Installation
@@ -21,3 +24,6 @@ middleman-slim is an extension for the Middleman static site generator that adds
 ## License 
 
 Released under the MIT License.
+
+[gem]: https://rubygems.org/gems/middleman-slim
+[travis]: http://travis-ci.org/yterajima/middleman-slim
