@@ -1,5 +1,4 @@
 language: ruby
-bundler_args: --without development
 rvm:
   - ruby-head
   - 2.1.1
