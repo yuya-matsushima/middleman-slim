@@ -1,7 +1,7 @@
 # middleman-slim
 
-[![Gem Version](https://badge.fury.io/rb/middleman-slim.png)][gem]
-[![Build Status](https://travis-ci.org/yterajima/middleman-slim.png)][travis]
+[![Gem Version](https://badge.fury.io/rb/middleman-slim.svg)][gem]
+[![Build Status](https://travis-ci.org/yterajima/middleman-slim.svg)][travis]
 
 middleman-slim is an extension for the Middleman static site generator that adds support for Slim.
 
