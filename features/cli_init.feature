@@ -15,6 +15,7 @@ Feature: Middleman-Slim CLI
       | source/javascripts/all.js                     |
       | source/stylesheets/all.css                    |
       | source/stylesheets/normalize.css              |
+    And the file "source/stylesheets/all.css" should contain "../images/"
 
   Scenario: Create a new project with --images-dir option
     Given I run `middleman init MY_PROJECT --template slim --images-dir img`
@@ -25,4 +26,4 @@ Feature: Middleman-Slim CLI
       | source/img/middleman.png                      |
       | source/stylesheets/all.css                    |
     And the file "source/stylesheets/all.css" should contain "../img/"
-    And the file "source/stylesheets/all.css" should not contain "../IMG_DIR/"
+    And the file "source/stylesheets/all.css" should not contain "../images/"
