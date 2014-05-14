@@ -1,6 +1,7 @@
 language: ruby
 rvm:
   - ruby-head
+  - 2.1.2
   - 2.1.1
   - 2.1.0
   - 2.0.0
@@ -13,3 +14,6 @@ matrix:
     - rvm: jruby-19mode
 script: bundle exec cucumber
 env: TEST=true
+notifications:
+  webhooks:
+    - https://idobata.io/hook/792c4ace-c92f-44e3-b70b-b2584c40b800
