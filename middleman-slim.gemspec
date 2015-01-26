@@ -6,7 +6,7 @@ require 'middleman-slim/version'
 Gem::Specification.new do |spec|
   spec.name          = "middleman-slim"
   spec.version       = Middleman::Slim::VERSION
-  spec.authors       = ["yterajima"]
+  spec.authors       = ["Yuya Terajima"]
   spec.email         = ["terra@e2esound.com"]
   spec.description   = %q{A Middleman template using Slim.}
   spec.summary       = %q{A Middleman template using Slim.}
