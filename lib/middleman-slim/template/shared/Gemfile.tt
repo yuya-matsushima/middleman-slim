@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 
 gem "middleman", "~><%= Middleman::VERSION %>"
-gem "slim", "=> 2.0"
+gem "slim", ">= 2.0"
 
 # Live-reloading plugin
 gem "middleman-livereload", "~> 3.1.0"
