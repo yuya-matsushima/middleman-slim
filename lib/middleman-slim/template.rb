@@ -39,9 +39,7 @@ module Middleman
 
       private
       def replace_images_dir
-        if options[:images_dir] == 'images'
-          return
-        end
+        return if options[:images_dir] == 'images'
 
         open(File.join(location, 'source', options[:css_dir], 'all.css'), 'r+') {|f|
           f.flock(File::LOCK_EX)
@@ -55,5 +53,3 @@ module Middleman
     end
   end
 end
-
-Middleman::Templates.register :slim, Middleman::Slim::Template

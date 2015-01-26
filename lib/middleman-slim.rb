@@ -1,5 +1,4 @@
 require 'middleman-core'
-
 require 'middleman-slim/version'
 require 'middleman-slim/template'
 
