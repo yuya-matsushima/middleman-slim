@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = Middleman::Slim::VERSION
   spec.authors       = ["Yuya Terajima"]
   spec.email         = ["terra@e2esound.com"]
-  spec.description   = %q{A Middleman template using Slim.}
+  spec.description   = %q{A Middleman template using Slim. You can use Slim as easy in Middleman Project}
   spec.summary       = %q{A Middleman template using Slim.}
   spec.homepage      = "https://github.com/yterajima/middleman-slim"
   spec.license       = "MIT"
