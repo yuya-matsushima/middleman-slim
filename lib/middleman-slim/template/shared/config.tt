@@ -1,3 +1,5 @@
+require "slim"
+
 ###
 # Compass
 ###
@@ -47,31 +49,11 @@
 #   end
 # end
 
-###
-# Gem
-###
-require 'slim'
+set :css_dir, 'stylesheets'
 
-<% if options[:css_dir] -%>
-set :css_dir, '<%= options[:css_dir] -%>'
-<% else -%>
-# Change the CSS directory
-# set :css_dir, "alternative_css_directory"
-<% end -%>
+set :js_dir, 'javascripts'
 
-<% if options[:js_dir] -%>
-set :js_dir, '<%= options[:js_dir] -%>'
-<% else -%>
-# Change the JS directory
-# set :js_dir, "alternative_js_directory"
-<% end -%>
-
-<% if options[:images_dir] -%>
-set :images_dir, '<%= options[:images_dir] -%>'
-<% else -%>
-# Change the images directory
-# set :images_dir, "alternative_image_directory"
-<% end -%>
+set :images_dir, 'images'
 
 # Build-specific configuration
 configure :build do

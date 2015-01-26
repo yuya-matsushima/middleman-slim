@@ -2,7 +2,7 @@ Feature: Middleman-Slim CLI
 
   Scenario: Create a new project
     Given I run `middleman init MY_PROJECT --template slim`
-    Then the exit status should be 0
+    And the exit status should be 0
     When I cd to "MY_PROJECT"
     Then the following files should exist:
       | Gemfile                                       |
@@ -19,7 +19,7 @@ Feature: Middleman-Slim CLI
 
   Scenario: Create a new project with --images-dir option
     Given I run `middleman init MY_PROJECT --template slim --images-dir img`
-    Then the exit status should be 0
+    And the exit status should be 0
     When I cd to "MY_PROJECT"
     Then the following files should exist:
       | source/img/background.png                     |
