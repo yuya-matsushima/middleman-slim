@@ -1,1 +1,1 @@
-require 'middleman-core/step_definitions'
+require 'aruba/cucumber'

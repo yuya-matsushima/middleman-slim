@@ -1,29 +1,80 @@
-Feature: Middleman-Slim CLI
+Feature: Middleman init
 
   Scenario: Create a new project
-    Given I run `middleman init MY_PROJECT --template slim`
-    And the exit status should be 0
+    When I run `middleman init MY_PROJECT -T yterajima/middleman-slim#v4` interactively
+    And I type "y"
+    And I type "y"
+    And I type "y"
+    And I type "y"
+    Then the exit status should be 0
     When I cd to "MY_PROJECT"
     Then the following files should exist:
       | Gemfile                                       |
       | .gitignore                                    |
+      | config.ru                                     |
       | config.rb                                     |
       | source/index.html.slim                        |
-      | source/images/background.png                  |
-      | source/images/middleman.png                   |
       | source/layouts/layout.slim                    |
       | source/javascripts/all.js                     |
-      | source/stylesheets/all.css                    |
-      | source/stylesheets/normalize.css              |
-    And the file "source/stylesheets/all.css" should contain "../images/"
+      | source/stylesheets/site.css.scss              |
+      | source/stylesheets/_normalize.scss            |
 
-  Scenario: Create a new project with --images-dir option
-    Given I run `middleman init MY_PROJECT --template slim --images-dir img`
-    And the exit status should be 0
+  Scenario: Create a new project in the current directory
+    Given a directory named "MY_PROJECT"
     When I cd to "MY_PROJECT"
-    Then the following files should exist:
-      | source/img/background.png                     |
-      | source/img/middleman.png                      |
-      | source/stylesheets/all.css                    |
-    And the file "source/stylesheets/all.css" should contain "../img/"
-    And the file "source/stylesheets/all.css" should not contain "../images/"
+    And I run `middleman init -T yterajima/middleman-slim#v4` interactively
+    And I type "y"
+    And I type "y"
+    And I type "y"
+    And I type "y"
+    Then the exit status should be 0
+    And the following files should exist:
+      | Gemfile                                       |
+      | config.rb                                     |
+      | source/index.html.slim                        |
+
+  Scenario: Create a new project with middleman-sprockets
+    When I run `middleman init MY_PROJECT -T yterajima/middleman-slim#v4` interactively
+    And I type "y"
+    And I type "n"
+    And I type "n"
+    And I type "n"
+    Then the exit status should be 0
+    When I cd to "MY_PROJECT"
+    Then the file "Gemfile" should contain "middleman-sprockets"
+    And the file "Gemfile" should not contain "middleman-compass"
+    And the file "Gemfile" should not contain "middleman-livereload"
+
+  Scenario: Create a new project with middleman-compass
+    When I run `middleman init MY_PROJECT -T yterajima/middleman-slim#v4` interactively
+    And I type "n"
+    And I type "y"
+    And I type "n"
+    And I type "n"
+    Then the exit status should be 0
+    When I cd to "MY_PROJECT"
+    Then the file "Gemfile" should not contain "middleman-sprockets"
+    And the file "Gemfile" should contain "middleman-compass"
+    And the file "Gemfile" should not contain "middleman-livereload"
+
+  Scenario: Create a new project with middleman-livereload
+    When I run `middleman init MY_PROJECT -T yterajima/middleman-slim#v4` interactively
+    And I type "n"
+    And I type "n"
+    And I type "y"
+    And I type "n"
+    Then the exit status should be 0
+    When I cd to "MY_PROJECT"
+    Then the file "Gemfile" should not contain "middleman-sprockets"
+    And the file "Gemfile" should not contain "middleman-compass"
+    And the file "Gemfile" should contain "middleman-livereload"
+
+  Scenario: Create a new project without cunfig.ru
+    When I run `middleman init MY_PROJECT -T yterajima/middleman-slim#v4` interactively
+    And I type "n"
+    And I type "n"
+    And I type "n"
+    And I type "n"
+    Then the exit status should be 0
+    When I cd to "MY_PROJECT"
+    Then the file "config.ru" should not exist

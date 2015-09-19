@@ -1,23 +1,26 @@
 language: ruby
+sudo: false
+cache: bundler
+before_script:
+- bundle update
 rvm:
 - ruby-head
 - jruby-head
-- jruby-19mode
 - 2.2
 - 2.1
 - 2.0
-- 1.9.3
 os:
 - linux
-- osx
 matrix:
   fast_finish: true
   allow_failures:
   - rvm: ruby-head
-  - rvm: jruby-19mode
   - rvm: jruby-head
+env:
+  global:
+  - JRUBY_OPTS='-J-Xmx1024M'
+  - TEST=true
 script: bundle exec cucumber
-env: TEST=true
 notifications:
   slack:
-    secure: ady7kr2PalzUvfvD9BTiGD/48tAGCZC3B+ixfdKfm3qdF9soDATIdqUf9vIZkvROeIjTcOZevsXnX3pHvDAIZ9N5Ykp/3U5ySoUvtAxoG+exsp26eUf2raznT7sEYnLt/kgML/FappeNQd2aN/sOKybWbnWDcEflmoCBSQ6y3jA=
+    secure: O3D9z6MzH0jzc1BXA/Th2kaOYTYHTaqsSRhWVrrTtlo6EYi0RYQ4Qn42VJnK2uLPyOR+e5cRHeOkn95U18UPKsS1dODcrUXXLmS3pHdXJpUbo0qW3DYOyzVVc3H9zFohIyQWjO0cARButzFFFPe+8RO4t7VP1rqyWWXmf2TWU3M=
