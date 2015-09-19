@@ -17,7 +17,6 @@ Feature: Middleman init
       | source/layouts/layout.slim                    |
       | source/javascripts/all.js                     |
       | source/stylesheets/site.css.scss              |
-      | source/stylesheets/_normalize.scss            |
 
   Scenario: Create a new project in the current directory
     Given a directory named "MY_PROJECT"
