@@ -1,7 +1,7 @@
 Feature: Middleman init
 
   Scenario: Create a new project
-    When I run `middleman init MY_PROJECT -T yterajima/middleman-slim#v4` interactively
+    When I run `middleman init MY_PROJECT -T yterajima/middleman-slim` interactively
     And I type "y"
     And I type "y"
     And I type "y"
@@ -21,7 +21,7 @@ Feature: Middleman init
   Scenario: Create a new project in the current directory
     Given a directory named "MY_PROJECT"
     When I cd to "MY_PROJECT"
-    And I run `middleman init -T yterajima/middleman-slim#v4` interactively
+    And I run `middleman init -T yterajima/middleman-slim` interactively
     And I type "y"
     And I type "y"
     And I type "y"
@@ -33,7 +33,7 @@ Feature: Middleman init
       | source/index.html.slim                        |
 
   Scenario: Create a new project with middleman-sprockets
-    When I run `middleman init MY_PROJECT -T yterajima/middleman-slim#v4` interactively
+    When I run `middleman init MY_PROJECT -T yterajima/middleman-slim` interactively
     And I type "y"
     And I type "n"
     And I type "n"
@@ -45,7 +45,7 @@ Feature: Middleman init
     And the file "Gemfile" should not contain "middleman-livereload"
 
   Scenario: Create a new project with middleman-compass
-    When I run `middleman init MY_PROJECT -T yterajima/middleman-slim#v4` interactively
+    When I run `middleman init MY_PROJECT -T yterajima/middleman-slim` interactively
     And I type "n"
     And I type "y"
     And I type "n"
@@ -57,7 +57,7 @@ Feature: Middleman init
     And the file "Gemfile" should not contain "middleman-livereload"
 
   Scenario: Create a new project with middleman-livereload
-    When I run `middleman init MY_PROJECT -T yterajima/middleman-slim#v4` interactively
+    When I run `middleman init MY_PROJECT -T yterajima/middleman-slim` interactively
     And I type "n"
     And I type "n"
     And I type "y"
@@ -69,7 +69,7 @@ Feature: Middleman init
     And the file "Gemfile" should contain "middleman-livereload"
 
   Scenario: Create a new project without cunfig.ru
-    When I run `middleman init MY_PROJECT -T yterajima/middleman-slim#v4` interactively
+    When I run `middleman init MY_PROJECT -T yterajima/middleman-slim` interactively
     And I type "n"
     And I type "n"
     And I type "n"
