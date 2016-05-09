@@ -17,7 +17,6 @@ matrix:
   - rvm: ruby-head
 env:
   global:
-  - JRUBY_OPTS='-J-Xmx1024M'
   - TEST=true
 script: bundle exec cucumber
 notifications:
