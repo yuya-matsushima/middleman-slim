@@ -7,7 +7,7 @@ A template of [Middleman](https://middlemanapp.com/).
 middleman-slim support middleman v4.
 
 ```
-$ middleman init MY_PROJECT -T /middleman-slim
+$ middleman init MY_PROJECT -T yuya-matsushima/middleman-slim
 ```
 
 If you still use middleman(v3), you can use:
